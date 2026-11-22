@@ -46,7 +46,7 @@ export function FundamentalsSidebarList({
               >
                 <span
                   className={
-                    "flex items-baseline justify-between gap-2 font-mono text-[10.5px] uppercase tracking-[0.12em] " +
+                    "flex items-baseline justify-between gap-2 font-mono text-[12px] uppercase tracking-[0.12em] " +
                     (active ? "text-accent" : "text-text-faint")
                   }
                 >

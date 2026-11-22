@@ -45,7 +45,7 @@ export function FlatSidebarList({
         if (!part) return list;
         return (
           <div key={part.num} className="mt-4 first:mt-0">
-            <p id={`${uid}-part-${part.num}`} className="px-3 pb-1 font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-text-dim">
+            <p id={`${uid}-part-${part.num}`} className="px-3 pb-1 font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-text-dim">
               <T en={`PART ${part.num}`} bn={`পার্ট ${part.num}`} /> · {part.title}
             </p>
             {list}
@@ -81,7 +81,7 @@ export function FlatSidebarList({
           {m.progress ? (
             <span
               className={
-                "flex items-baseline justify-between gap-2 font-mono text-[10.5px] uppercase tracking-[0.12em] " + tone
+                "flex items-baseline justify-between gap-2 font-mono text-[12px] uppercase tracking-[0.12em] " + tone
               }
             >
               <span>{label}</span>
@@ -97,7 +97,7 @@ export function FlatSidebarList({
               ) : null}
             </span>
           ) : (
-            <span className={"block font-mono text-[10.5px] uppercase tracking-[0.12em] " + tone}>{label}</span>
+            <span className={"block font-mono text-[12px] uppercase tracking-[0.12em] " + tone}>{label}</span>
           )}
           <span
             className={

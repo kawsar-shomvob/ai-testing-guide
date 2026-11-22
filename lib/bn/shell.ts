@@ -50,6 +50,7 @@ export const SHELL_BN: Omit<Bn<typeof ui>, "HOME_UI"> = {
   footerColumns: { tutorial: "টিউটোরিয়াল", modules: "মডিউল", project: "প্রজেক্ট" },
   footerContents: "সূচিপত্র",
   footerSource: "GitHub-এ সোর্স",
+  installIosHint: "iPhone বা iPad-এ: Share চাপুন, তারপর Add to Home Screen বেছে নিন, তাহলে এই সাইট অ্যাপ হিসেবে ইনস্টল হবে।",
 
   contentsButton: "সূচিপত্র",
   navMain: "মূল মেনু",

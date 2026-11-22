@@ -15,7 +15,7 @@ function MenuButtonPlaceholder() {
     <div className="nav:hidden">
       <span
         aria-hidden="true"
-        className="grid size-9 place-items-center rounded-lg border border-border text-text-faint"
+        className="grid size-11 place-items-center rounded-lg border border-border text-text-faint"
       >
         <svg viewBox="0 0 20 20" className="size-5" fill="none">
           <path d="M3 5.5h14M3 10h14M3 14.5h9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
@@ -36,11 +36,11 @@ export function SiteHeader({ searchSlot }: { searchSlot?: ReactNode }) {
       {/* The blur sits on its own layer. A backdrop-filter on the header
           itself would trap the fixed-position drawer inside the header. */}
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-bg/90 backdrop-blur-md backdrop-saturate-150" />
-      <div className="mx-auto flex h-full max-w-[1440px] items-center gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex h-full max-w-[1440px] items-center gap-2 px-4 sm:gap-3 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-2.5 text-text no-underline">
           <span
             aria-hidden="true"
-            className="grid size-[34px] shrink-0 place-items-center rounded-lg bg-accent text-bg max-[360px]:hidden"
+            className="grid size-[34px] shrink-0 place-items-center rounded-lg bg-accent text-bg max-[380px]:hidden [html[data-installable]_&]:max-[400px]:hidden"
           >
             <BrandMark className="size-5" mono />
           </span>
@@ -49,7 +49,7 @@ export function SiteHeader({ searchSlot }: { searchSlot?: ReactNode }) {
         <Suspense fallback={<NavItems activeId={null} />}>
           <HeaderNav />
         </Suspense>
-        <div className="ml-auto flex items-center gap-2 nav:ml-4">
+        <div className="ml-auto flex items-center gap-1 sm:gap-2 nav:ml-4">
           {searchSlot}
           <VoiceToggle />
           <InstallButton />

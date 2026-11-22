@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { CONTENTS_HOME, CONTENTS_ROUTES } from "../lib/contents.ts";
 import { precacheUrls } from "../lib/pwa.ts";
 import { sitemapPaths } from "../lib/sitemap.ts";
+import { CONTENT_PAGES } from "../lib/reading-state.ts";
 import { MODULES, siteStats } from "../lib/stats.ts";
 
 test("the sitemap and the precache have /contents/", () => {
@@ -14,7 +15,11 @@ test("the sitemap and the precache have /contents/", () => {
 });
 
 test("siteStats counts from the data", () => {
-  assert.deepEqual(siteStats(), { parts: 24, modules: 13, pages: 286, voices: 3 });
+  assert.deepEqual(siteStats(), { parts: 24, modules: 13, pages: 269, voices: 3 });
+});
+
+test("the stats row counts the same pages as the dashboard", () => {
+  assert.equal(siteStats().pages, CONTENT_PAGES.length);
 });
 
 test("MODULES lists every module page once", () => {

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Crimson_Pro, Inter, JetBrains_Mono, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
-import { THEME_INIT_SCRIPT } from "@/lib/theme";
+import { THEME_COLORS, THEME_INIT_SCRIPT } from "@/lib/theme";
 import { DEFAULT_VERSION, VERSION_INIT_SCRIPT } from "@/lib/fundamentals/version";
 import { VOICE_INIT_SCRIPT } from "@/lib/voice";
 import { INSTALL_CAPTURE_SCRIPT } from "@/lib/pwa-install";
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
 // The browser colors its title bar to match the page background (globals.css).
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0e1115" },
-    { media: "(prefers-color-scheme: light)", color: "#faf7f2" },
+    { media: "(prefers-color-scheme: dark)", color: THEME_COLORS.dark },
+    { media: "(prefers-color-scheme: light)", color: THEME_COLORS.light },
   ],
 };
 

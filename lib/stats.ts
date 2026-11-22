@@ -4,7 +4,6 @@ import { LINUX_HOME, STAGES } from "./linux/stages.ts";
 import { LINUX_UI } from "./linux/ui.ts";
 import { FLAT_MODULES, type FlatModuleId } from "./modules/registry.ts";
 import { PAGES } from "./nav.ts";
-import { sitemapPaths } from "./sitemap.ts";
 
 export type ModuleId = "linux" | "fundamentals" | FlatModuleId;
 
@@ -41,7 +40,14 @@ export const MODULES: readonly SiteModule[] = [
 /** The text voices of a section: Technical, plain English, and Bangla. */
 const VOICE_COUNT = 3;
 
-/** The numbers of the stats row on the home page and the contents page. */
+/**
+ * The numbers of the stats row on the home page and the contents page.
+ * `pages` counts the pages to read (the same count as the dashboard, 269),
+ * not the routes: the home page, the contents page, and the module homes
+ * are not pages to read. Counting the routes gave 286 here and 269 on the
+ * dashboard, with no label to explain the difference.
+ */
 export function siteStats(): { parts: number; modules: number; pages: number; voices: number } {
-  return { parts: PAGES.length, modules: MODULES.length, pages: sitemapPaths().length, voices: VOICE_COUNT };
+  const pages = PAGES.length + MODULES.reduce((sum, module) => sum + module.pages.length, 0);
+  return { parts: PAGES.length, modules: MODULES.length, pages, voices: VOICE_COUNT };
 }

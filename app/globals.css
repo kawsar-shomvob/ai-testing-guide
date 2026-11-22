@@ -534,6 +534,10 @@ body {
     font-weight: 500;
     line-height: 1.5;
     color: var(--text);
+    /* A comfortable touch target: at least 44 px high, with no change to the box above and below. */
+    min-height: 44px;
+    align-items: center;
+    margin-block: -0.75rem;
   }
   .mdx summary::-webkit-details-marker {
     display: none;
@@ -548,7 +552,7 @@ body {
     transform: rotate(90deg);
   }
   .mdx details[open] > summary {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
   }
   .mdx details > :last-child {
     margin-bottom: 0;
@@ -749,6 +753,12 @@ html[data-voice-default="bangla"] .i18n-bn {
   .btn-sm {
     padding: 0.5rem 0.875rem;
     font-size: 14px;
+  }
+  /* Touch screens: every button is at least 44 px high (WCAG 2.5.5, and the rule of CLAUDE.md). */
+  @media (pointer: coarse) {
+    .btn {
+      min-height: 44px;
+    }
   }
   /* The label color is the page ground, so it has the contrast of --accent on --bg. */
   .btn-primary {

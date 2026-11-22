@@ -749,6 +749,10 @@ The site installs as an app and is offline first.
 - Offline, a page that is not in the cache gets the 404 page.
 - Each build writes a new cache version into `/sw.js`. The browser finds the new `/sw.js` on the next visit. Its install caches all pages again, and it deletes the old caches.
 - `tests/pwa.test.ts` runs the worker source with a fake `caches` and `fetch`.
+- The `theme-color` tags follow the device setting. `ThemeToggle` sets both to the chosen theme's color (`THEME_COLORS` in `lib/theme.ts`), so the browser bar and the installed app's title bar match the page.
+- iOS and iPadOS never fire `beforeinstallprompt`. `IosInstallHint` (footer) shows a one-line "Add to Home Screen" hint there, in a browser tab only.
+- External links (MDX links, the footer, the "Suggest an edit" link, and the Sources list) open in a new tab, because the installed app has no browser back button.
+- Touch targets: header buttons are 44 px below the `nav` breakpoint (36 px above it); `.btn` is at least 44 px high on `pointer: coarse`; checkboxes are 24 px.
 - Only production builds register the service worker. `npm run dev` has none. To test it, run `npm run build` and serve `out/`.
 - A new page in `lib/nav.ts`, a new stage in `lib/linux/stages.ts`, a new chapter in `lib/fundamentals/chapters.ts`, or a new page of a flat module in `lib/modules/registry.ts` goes into the precache list automatically.
 

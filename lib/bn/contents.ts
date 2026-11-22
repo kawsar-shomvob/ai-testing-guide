@@ -15,5 +15,5 @@ export const CONTENTS_UI_BN: Bn<typeof CONTENTS_UI> = {
   moduleMeta: (count) => `${count}টি পেজ`,
   openModule: "মডিউলটি খুলুন",
   statsLabel: "সংখ্যায় এই সাইট",
-  stats: { parts: "টিউটোরিয়াল পর্ব", modules: "মডিউল", pages: "পেজ", voices: "টেক্সট ভয়েস" },
+  stats: { parts: "টিউটোরিয়াল পর্ব", modules: "মডিউল", pages: "পড়ার পেজ", voices: "টেক্সট ভয়েস" },
 };

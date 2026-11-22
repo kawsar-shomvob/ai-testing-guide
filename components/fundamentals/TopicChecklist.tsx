@@ -20,11 +20,11 @@ export function TopicChecklist({ chapter }: { chapter: FundamentalsChapter }) {
             checked={done.includes(topic.id)}
             onChange={() => toggle(topic.id)}
             aria-label={(bn ? FUNDAMENTALS_UI_BN : FUNDAMENTALS_UI).checklistLabel(topic.title)}
-            className="size-4 shrink-0 cursor-pointer accent-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="size-6 shrink-0 cursor-pointer accent-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           />
           <Link
             href={`${chapter.href}#${topic.anchor}`}
-            className="text-[15px] leading-snug text-text no-underline hover:text-accent hover:underline"
+            className="py-2 text-[15px] leading-snug text-text no-underline hover:text-accent hover:underline"
           >
             {topic.title}
           </Link>

@@ -45,9 +45,17 @@ const components: MDXComponents = {
   img: MdxImage,
   pre: CodeBlock,
   // Site-internal links ("/group/page/") go through next/link, which adds the
-  // basePath on GitHub Pages. In-page anchors and external links stay plain.
+  // basePath on GitHub Pages. In-page anchors stay plain. External links open
+  // in a new tab: in the installed app there is no browser back button, so a
+  // link that replaced the page would leave the reader with no way back.
   a: ({ href = "", ...props }) =>
-    href.startsWith("/") ? <Link href={href} {...props} /> : <a href={href} {...props} />,
+    href.startsWith("/") ? (
+      <Link href={href} {...props} />
+    ) : /^https?:\/\//.test(href) ? (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props} />
+    ) : (
+      <a href={href} {...props} />
+    ),
   // On phones, each row shows as a card (see .mdx-table in globals.css).
   table: MdxTable,
 };

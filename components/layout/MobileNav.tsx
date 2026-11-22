@@ -94,7 +94,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen(true)}
-        className="grid size-9 place-items-center rounded-lg border border-border text-text-dim transition-colors hover:bg-bg-raised-2 hover:text-text nav:hidden"
+        className="grid size-11 place-items-center rounded-lg border border-border text-text-dim transition-colors hover:bg-bg-raised-2 hover:text-text nav:hidden"
       >
         <span className="sr-only">
           <T en={menuOpen} bn={SHELL_BN.menuOpen} />
@@ -141,7 +141,7 @@ export function MobileNav() {
               ref={closeRef}
               type="button"
               onClick={() => setOpen(false)}
-              className="-mr-2 grid size-9 place-items-center rounded-md text-text-dim transition-colors hover:bg-bg-raised hover:text-text"
+              className="-mr-2 grid size-11 place-items-center rounded-md text-text-dim transition-colors hover:bg-bg-raised hover:text-text"
             >
               <span className="sr-only">
                 <T en={menuClose} bn={SHELL_BN.menuClose} />

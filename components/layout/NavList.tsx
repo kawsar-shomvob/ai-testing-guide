@@ -72,7 +72,7 @@ export function NavList({
       {SECTIONS.map((section) => (
         // key on current: a new module opens its section and closes the others
         <details key={`${section.id}-${current}`} open={section.id === current} className="group mb-1 border-b border-border pb-1 last:border-b-0">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-2 rounded-md px-3 py-2 text-[14px] font-medium text-text hover:bg-bg-raised/60 [&::-webkit-details-marker]:hidden">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-md px-3 py-2 text-[14px] font-medium text-text hover:bg-bg-raised/60 [&::-webkit-details-marker]:hidden">
             <T en={section.label} bn={section.bn} />
             <span aria-hidden="true" className="text-text-faint transition-transform group-open:rotate-90">
               ▸
@@ -81,7 +81,7 @@ export function NavList({
           <Link
             href={section.href}
             onClick={onNavigate}
-            className="mx-3 mt-1 inline-block font-mono text-[11px] uppercase tracking-[0.12em] text-text-dim no-underline hover:text-accent"
+            className="mx-3 mt-1 inline-block py-3 font-mono text-[12px] uppercase tracking-[0.12em] text-text-dim no-underline hover:text-accent"
           >
             <T en={sidebarHome} bn={SHELL_BN.sidebarHome} /> <span aria-hidden="true">→</span>
           </Link>

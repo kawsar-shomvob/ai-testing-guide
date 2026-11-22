@@ -78,6 +78,7 @@ export const HOME_UI = {
 export const footerColumns = { tutorial: "Tutorial", modules: "Modules", project: "Project" };
 export const footerContents = "Contents";
 export const footerSource = "Source on GitHub";
+export const installIosHint = "On iPhone or iPad: tap Share, then Add to Home Screen, to install this site as an app.";
 
 export const contentsButton = "Contents";
 export const navMain = "Main";

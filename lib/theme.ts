@@ -9,6 +9,9 @@ export function resolveTheme(stored: string | null, prefersLight: boolean): Them
   return prefersLight ? "light" : "dark";
 }
 
+/** The page ground of each theme: the `theme-color` of the browser bar and the installed app's title bar. */
+export const THEME_COLORS: Record<Theme, string> = { dark: "#0e1115", light: "#faf7f2" };
+
 export function nextTheme(theme: Theme): Theme {
   return theme === "light" ? "dark" : "light";
 }

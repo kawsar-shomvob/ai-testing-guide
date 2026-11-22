@@ -44,6 +44,16 @@ export function InstallButton() {
     };
   }, []);
 
+  // The header is tight on a phone. While the Install button shows, a data
+  // attribute on <html> lets the header hide the logo mark at 400 px and below
+  // (see SiteHeader), so that the name of the site is not cut off.
+  useEffect(() => {
+    const root = document.documentElement;
+    if (installEvent) root.setAttribute("data-installable", "");
+    else root.removeAttribute("data-installable");
+    return () => root.removeAttribute("data-installable");
+  }, [installEvent]);
+
   if (!installEvent) return null;
 
   const install = async () => {
@@ -63,7 +73,7 @@ export function InstallButton() {
       onClick={install}
       aria-label={label}
       title={label}
-      className="grid size-9 shrink-0 place-items-center rounded-lg border border-border bg-bg-raised text-text-dim transition-colors hover:border-border-strong hover:bg-bg-raised-2 hover:text-text"
+      className="grid size-11 nav:size-9 shrink-0 place-items-center rounded-lg border border-border bg-bg-raised text-text-dim transition-colors hover:border-border-strong hover:bg-bg-raised-2 hover:text-text"
     >
       <svg viewBox="0 0 20 20" className="size-[18px]" fill="none" aria-hidden="true">
         <path

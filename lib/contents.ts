@@ -16,5 +16,5 @@ export const CONTENTS_UI = {
   moduleMeta: (count: number) => `${count} ${count === 1 ? "page" : "pages"}`,
   openModule: "Open the module",
   statsLabel: "The site in numbers",
-  stats: { parts: "tutorial parts", modules: "modules", pages: "pages", voices: "text voices" },
+  stats: { parts: "tutorial parts", modules: "modules", pages: "pages to read", voices: "text voices" },
 };

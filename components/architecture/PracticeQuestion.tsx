@@ -39,7 +39,7 @@ export function PracticeQuestion({
           checked={done.includes(id)}
           onChange={() => toggle(id)}
           aria-label={doneLabel}
-          className="mt-1.5 size-4 shrink-0 cursor-pointer accent-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="mt-0.5 size-6 shrink-0 cursor-pointer accent-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         />
         <div className="min-w-0 flex-1">
           <p className="m-0 font-mono text-[11px] uppercase tracking-[0.16em] text-accent">

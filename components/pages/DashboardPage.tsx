@@ -261,7 +261,7 @@ export function DashboardPage() {
             >
               <Link
                 href={row.href}
-                className="col-start-1 row-start-1 min-w-0 truncate text-[15px] text-text no-underline hover:text-accent"
+                className="col-start-1 row-start-1 -my-1.5 min-w-0 truncate py-1.5 text-[15px] text-text no-underline hover:text-accent"
               >
                 {row.label}
               </Link>

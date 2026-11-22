@@ -94,7 +94,7 @@ export function LinuxHome() {
             </div>
             {/* Closed: 103 checkboxes on one page are too much to read at once. */}
             <details className="mt-4">
-              <summary className="cursor-pointer font-mono text-[12px] text-accent">
+              <summary className="-my-2.5 cursor-pointer py-3.5 font-mono text-[12px] text-accent">
                 <T en={LINUX_UI.checklistHeading} bn={BN.checklistHeading} />
               </summary>
               <div className="mt-2">

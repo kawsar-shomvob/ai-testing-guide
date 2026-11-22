@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useSyncExternalStore } from "react";
-import { THEME_STORAGE_KEY, nextTheme, resolveTheme } from "@/lib/theme";
+import { THEME_COLORS, THEME_STORAGE_KEY, nextTheme, resolveTheme } from "@/lib/theme";
 import type { Theme } from "@/lib/theme";
 import { useBn } from "@/components/i18n/useBn";
 import { SHELL_BN } from "@/lib/bn/shell";
@@ -19,6 +19,10 @@ function readStored(): string | null {
 
 function apply(theme: Theme) {
   document.documentElement.setAttribute("data-theme", theme);
+  // The theme-color tags follow the device setting. When the reader picks the
+  // other theme, both tags take the color of the chosen one, so the browser
+  // bar (and the title bar of the installed app) matches the page.
+  document.querySelectorAll('meta[name="theme-color"]').forEach((tag) => tag.setAttribute("content", THEME_COLORS[theme]));
 }
 
 /** data-theme on <html> is the source of truth. */
@@ -78,7 +82,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="grid size-9 shrink-0 place-items-center rounded-lg border border-border bg-bg-raised text-text-dim transition-colors hover:border-border-strong hover:bg-bg-raised-2 hover:text-text"
+      className="grid size-11 nav:size-9 shrink-0 place-items-center rounded-lg border border-border bg-bg-raised text-text-dim transition-colors hover:border-border-strong hover:bg-bg-raised-2 hover:text-text"
     >
       {/* Sun: shown in the dark theme (switches to light). */}
       <svg viewBox="0 0 20 20" className="size-[18px] light:hidden" fill="none" aria-hidden="true">

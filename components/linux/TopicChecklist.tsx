@@ -20,11 +20,11 @@ export function TopicChecklist({ stage }: { stage: LinuxStage }) {
             checked={done.includes(topic.id)}
             onChange={() => toggle(topic.id)}
             aria-label={(bn ? LINUX_UI_BN : LINUX_UI).checklistLabel(topic.title)}
-            className="size-4 shrink-0 cursor-pointer accent-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="size-6 shrink-0 cursor-pointer accent-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           />
           <Link
             href={`${stage.href}#${topic.anchor}`}
-            className="text-[15px] leading-snug text-text no-underline hover:text-accent hover:underline"
+            className="py-2 text-[15px] leading-snug text-text no-underline hover:text-accent hover:underline"
           >
             {topic.title}
           </Link>

@@ -8,6 +8,7 @@ import { OWNER, SITE_NAME } from "@/lib/site";
 import { MODULES } from "@/lib/stats";
 import { footerColumns, footerContents, footerSource, footerSummary } from "@/lib/ui";
 import { BrandMark } from "./BrandMark";
+import { IosInstallHint } from "./IosInstallHint";
 
 const LINK = "text-[14px] text-text-dim no-underline transition-colors hover:text-accent";
 const HEADING = "font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-text-faint";
@@ -31,6 +32,7 @@ export function SiteFooter() {
           </Link>
           <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-text-dim"><T en={footerSummary} bn={SHELL_BN.footerSummary} />
           </p>
+          <IosInstallHint />
         </div>
         {columns.map((column) => (
           <nav key={column.key} aria-labelledby={`footer-${column.key}`}>
@@ -47,7 +49,7 @@ export function SiteFooter() {
               ))}
               {column.key === "project" ? (
                 <li>
-                  <a href={REPO_URL} className={LINK}>
+                  <a href={REPO_URL} target="_blank" rel="noopener noreferrer" className={LINK}>
                     <T en={footerSource} bn={SHELL_BN.footerSource} />
                   </a>
                 </li>
@@ -59,7 +61,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <p className="mx-auto max-w-[1200px] px-4 py-5 font-mono text-xs text-text-faint sm:px-6">
           © 2026{" "}
-          <a href={OWNER.url} className="underline underline-offset-2 hover:text-accent">
+          <a href={OWNER.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-accent">
             {OWNER.name}
           </a>
         </p>

@@ -25,6 +25,8 @@ export function MetaLine({
       <T en={metaUpdated(formatUpdated(updated))} bn={SHELL_BN.metaUpdated(formatUpdated(updated))} /> ·{" "}
       <a
         href={editHref}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-text-dim underline decoration-border-strong underline-offset-4 hover:text-accent"
       >
         <T en={suggestEdit} bn={SHELL_BN.suggestEdit} />
